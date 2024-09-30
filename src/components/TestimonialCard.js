@@ -1,11 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const TestimonialCard = ({ name, company, text }) => {
   return (
-    <div className="testimonial">
-      <p>{text}</p>
-      <p><strong>{name}</strong>, {company}</p>
-    </div>
+    <motion.div
+      className="testimonial-card"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <p>"{text}"</p>
+      <p className="testimonial-author">- {name}, {company}</p>
+    </motion.div>
   );
 };
 
