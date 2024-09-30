@@ -30,4 +30,15 @@ Este es mi portfolio personal, desarrollado con React. Esta primera versión inc
 
 ---
 
+portfolio-react/
+├── public/
+│ └── index.html
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── styles/
+│ ├── App.js
+│ └── index.js
+└── README.md
+
 ¡Gracias por visitar mi portfolio! 😊
