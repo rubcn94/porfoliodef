@@ -21,3 +21,13 @@ Este es mi portfolio personal, desarrollado con React. Esta primera versión inc
 3. Inicia el servidor de desarrollo con `npm start`
 
 ## Estructura del proyecto
+
+
+## Próximos pasos
+- Mejorar el diseño visual
+- Añadir animaciones
+- Implementar modo oscuro/claro
+
+---
+
+¡Gracias por visitar mi portfolio! 😊
