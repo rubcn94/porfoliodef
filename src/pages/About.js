@@ -1,11 +1,27 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import TestimonialCard from '../components/TestimonialCard';
+import { testimonials } from '../utils/data';
 
 const About = () => {
   return (
-    <div className="about">
-      <h2>Sobre mí</h2>
-      <p>Soy un desarrollador fullstack con experiencia en React, Node.js y bases de datos SQL y NoSQL. Me apasiona crear aplicaciones web eficientes y escalables.</p>
-    </div>
+    <section className="about">
+      <h2>Sobre Mí</h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        Soy un desarrollador fullstack apasionado por crear soluciones innovadoras...
+      </motion.p>
+
+      <h3>Testimonios</h3>
+      <div className="testimonials-grid">
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard key={index} {...testimonial} />
+        ))}
+      </div>
+    </section>
   );
 };
 

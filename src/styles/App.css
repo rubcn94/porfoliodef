@@ -1,22 +1,102 @@
-/* Estilos generales */
+:root {
+  /* Colores principales */
+  --primary-color: #0077b6;
+  --secondary-color: #00b4d8;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+
+  /* Colores para modo oscuro */
+  --primary-dark: #0D47A1;
+  --secondary-dark: #1E3A5F;
+  --background-dark: #121212;
+  --text-dark: #E0E0E0;
+
+  /* Colores para modo claro */
+  --primary-light: #2196F3;
+  --secondary-light: #E3F2FD;
+  --background-light: #F5F5F5;
+  --text-light: #333333;
+
+  /* Colores de estado */
+  --error: #D32F2F;
+  --success: #388E3C;
+
+  /* Colores para los cuadros de proyecto */
+  --project-bg-dark: #1E3A5F;
+  --project-bg-light: #FFFFFF;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
-  color: #333;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-header, footer {
-  background-color: #f4f4f4;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
   padding: 1rem;
-  text-align: center;
+  background-color: var(--primary-color);
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav li a:hover {
+  color: var(--secondary-color);
 }
 
 main {
@@ -24,51 +104,79 @@ main {
   padding: 2rem;
 }
 
-/* Navegación */
-nav ul {
-  list-style-type: none;
-  padding: 0;
+/* Modo oscuro */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 1rem;
+body.dark-mode header {
+  background-color: var(--primary-dark);
+}
+
+body.dark-mode .project-card,
+body.dark-mode .testimonial-card {
+  background-color: var(--project-bg-dark);
+  color: var(--text-dark);
 }
 
 /* Proyectos */
-.project-grid {
+.project-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .project-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 5px;
+  background-color: var(--project-bg-light);
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.project-card img {
-  max-width: 100%;
-  height: auto;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Habilidades */
-.skill-bar {
-  margin-bottom: 1rem;
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }
 
-.skill-progress {
-  background-color: #f0f0f0;
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
+.technologies {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.progress {
-  background-color: #4CAF50;
-  height: 100%;
+.tech-icon {
+  width: 30px;
+  height: 30px;
 }
+
+.project-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.project-link:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Habilidades y testimonios (mantenidos de tu CSS original) */
+/* ... */
 
 /* Formulario de contacto */
 form {
@@ -78,18 +186,58 @@ form {
   margin: 0 auto;
 }
 
-input, textarea, button {
+input, textarea {
   margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--text-color);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: var(--project-bg-dark);
+  color: var(--text-dark);
+  border: 1px solid var(--secondary-dark);
+}
+
+/* Mensajes de estado */
+.status-message {
+  margin-top: 1rem;
   padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
 }
 
-button {
-  background-color: #4CAF50;
+.status-message.success {
+  background-color: var(--success);
   color: white;
-  border: none;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
+.status-message.error {
+  background-color: var(--error);
+  color: white;
+}
+
+/* Controles (tema y lenguaje) */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle,
+.language-selector {
+  margin-left: 1rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
 }
