@@ -1,10 +1,10 @@
 /* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .App {
@@ -13,61 +13,109 @@ body {
   min-height: 100vh;
 }
 
+/* Modo oscuro (por defecto) */
+body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
 header, footer {
-  background-color: #f4f4f4;
+  background-color: #16213e;
   padding: 1rem;
-  text-align: center;
+}
+
+/* Modo claro */
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.light-mode header,
+body.light-mode footer {
+  background-color: #e0e0e0;
 }
 
 main {
   flex: 1;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Navegación */
+/* Navegación y redes sociales */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline;
   margin-right: 1rem;
 }
 
+nav ul li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0077b5;
+}
+
+.social-icons a {
+  color: inherit;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0077b5;
+}
+
 /* Proyectos */
-.project-grid {
+.project-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .project-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card img {
-  max-width: 100%;
-  height: auto;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Habilidades */
 .skill-bar {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .skill-progress {
-  background-color: #f0f0f0;
-  height: 20px;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .progress {
-  background-color: #4CAF50;
+  background-color: #0077b5;
   height: 100%;
+  transition: width 0.5s ease-out;
 }
 
 /* Formulario de contacto */
@@ -78,18 +126,25 @@ form {
   margin: 0 auto;
 }
 
-input, textarea, button {
+input, textarea {
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: inherit;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #0077b5;
   color: white;
   border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #005fa3;
 }

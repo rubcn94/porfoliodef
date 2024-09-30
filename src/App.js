@@ -7,12 +7,14 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import ThemeToggle from './components/ThemeToggle';
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ThemeToggle />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
