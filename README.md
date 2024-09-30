@@ -21,3 +21,22 @@ Esta tercera versión representa un salto cualitativo en diseño y funcionalidad
 1. Clona el repositorio
 2. Instala las dependencias: `npm install`
 3. Configura las variables de entorno:
+
+4. Inicia el servidor de desarrollo: `npm start`
+
+## Estructura del proyecto
+
+portfolio-v3/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── hooks/
+│ ├── context/
+│ ├── styles/
+│ ├── utils/
+│ ├── App.js
+│ └── index.js
+├── public/
+│ ├── images/
+│ └── index.html
+└── README.md
