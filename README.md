@@ -26,3 +26,34 @@ Esta segunda versión trae mejoras significativas en diseño y funcionalidad:
 4. Inicia el proyecto con `npm start`
 
 ## Estructura del proyecto
+
+
+## Próximas mejoras
+- Implementar animaciones más avanzadas
+- Añadir una sección de blog
+- Mejorar el SEO
+
+---
+
+¡Espero que disfrutes explorando mi portfolio mejorado! 🚀
+
+portfolio-react/
+├── src/
+│ ├── components/
+│ │ ├── Header.js
+│ │ ├── Footer.js
+│ │ ├── ProjectCard.js
+│ │ └── SkillBar.js
+│ ├── pages/
+│ │ ├── Home.js
+│ │ ├── About.js
+│ │ ├── Projects.js
+│ │ ├── Skills.js
+│ │ └── Contact.js
+│ ├── styles/
+│ │ └── App.css
+│ ├── utils/
+│ │ └── data.js
+│ ├── App.js
+│ └── index.js
+└── README.md
