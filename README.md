@@ -43,7 +43,7 @@ text
 npm start
 text
 
-## 📁 Estructura del Proyecto
+## 📁 Mejoras en la Estructura del Proyecto
 
 src/
 |-- components/
