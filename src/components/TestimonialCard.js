@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -15,4 +16,4 @@ const TestimonialCard = ({ name, company, text }) => {
   );
 };
 
-export default TestimonialCard;
+export default TestimonialCard;*/
